@@ -1,13 +1,11 @@
 package com.bao.practice.repository;
 
 import com.bao.practice.dao.MovieDao;
-import com.bao.practice.dto.Actor;
 import com.bao.practice.dto.Movie;
 import com.bao.practice.mapper.RowMovieMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,7 +31,7 @@ public class MovieRepository implements MovieDao {
         String sql = """
                 INSERT into movie(name, release_date) 
                 VALUES (?, ?);
-               
+                               
                 """;
         return jdbcTemplate.update(sql, movie.name(), movie.releaseDate());
     }
